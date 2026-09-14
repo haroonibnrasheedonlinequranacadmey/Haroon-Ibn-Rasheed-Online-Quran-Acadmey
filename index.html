@@ -1,0 +1,1201 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Haroon Ibn Rasheed Online Quran Academy</title><style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f4f7fb;
+color:#222;
+}
+
+header{
+background:#075e54;
+color:white;
+text-align:center;
+padding:22px 15px;
+}
+
+header h1{
+font-size:24px;
+margin-bottom:6px;
+}
+
+header p{
+font-size:14px;
+}
+
+nav{
+background:white;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:7px;
+padding:12px;
+box-shadow:0 2px 8px #ddd;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav a{
+color:#075e54;
+text-decoration:none;
+font-weight:bold;
+padding:9px 13px;
+border-radius:7px;
+cursor:pointer;
+}
+
+nav a:hover,
+nav a.active{
+background:#075e54;
+color:white;
+}
+
+.page{
+display:none;
+}
+
+.page.active{
+display:block;
+}
+
+.container{
+max-width:1100px;
+margin:25px auto;
+padding:0 15px;
+}
+
+.title{
+text-align:center;
+margin-bottom:20px;
+}
+
+.title h2{
+color:#075e54;
+margin-bottom:7px;
+}
+
+.title p{
+color:#666;
+}
+
+.card{
+background:white;
+border-radius:14px;
+padding:18px;
+box-shadow:0 3px 12px #ddd;
+margin-bottom:20px;
+overflow:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:12px;
+text-align:center;
+}
+
+th{
+background:#eef7f5;
+color:#075e54;
+}
+
+.name{
+font-weight:bold;
+color:#075e54;
+}
+
+.small{
+font-size:13px;
+color:#666;
+margin-top:4px;
+}
+
+.btn{
+border:0;
+border-radius:7px;
+padding:9px 12px;
+margin:3px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.activeBtn{
+background:#ffc107;
+}
+
+.join{
+background:#198754;
+color:white;
+text-decoration:none;
+display:inline-block;
+}
+
+.lesson{
+background:#0d6efd;
+color:white;
+text-decoration:none;
+display:inline-block;
+}
+
+.absentBtn{
+background:#dc3545;
+color:white;
+}
+
+.endBtn{
+background:#6f42c1;
+color:white;
+}
+
+.shiftBtn{
+background:#075e54;
+color:white;
+padding:12px 20px;
+border:0;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+margin:5px;
+}
+
+.shiftBtn.active{
+background:#198754;
+}
+
+.status{
+display:inline-block;
+padding:8px 12px;
+border-radius:7px;
+font-weight:bold;
+}
+
+.absentStatus{
+background:#0d6efd;
+color:white;
+}
+
+.completedStatus{
+background:#ffc107;
+color:#111;
+}
+
+.activeRow{
+background:#e8f8ef;
+}
+
+.absentRow{
+background:#cfe8ff;
+}
+
+.completedRow{
+background:#fff1a8;
+}
+
+.social{
+margin-top:25px;
+background:white;
+padding:20px;
+text-align:center;
+border-radius:12px;
+box-shadow:0 3px 12px #ddd;
+}
+
+.social h3{
+color:#075e54;
+margin-bottom:12px;
+}
+
+.social a{
+display:inline-flex;
+align-items:center;
+gap:7px;
+background:#eef7f5;
+color:#075e54;
+text-decoration:none;
+padding:9px 13px;
+border-radius:7px;
+margin:4px;
+font-weight:bold;
+font-size:13px;
+}
+
+.social svg{
+width:19px;
+height:19px;
+fill:currentColor;
+}
+
+.courseGrid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.courseCard{
+background:white;
+border-radius:14px;
+overflow:hidden;
+box-shadow:0 3px 12px #ddd;
+}
+
+.courseCard img{
+width:100%;
+height:190px;
+object-fit:cover;
+display:block;
+}
+
+.courseContent{
+padding:16px;
+}
+
+.courseContent h3{
+color:#075e54;
+margin-bottom:10px;
+}
+
+.courseContent p{
+color:#666;
+font-size:14px;
+margin-bottom:12px;
+line-height:1.5;
+}
+
+.courseLink{
+display:inline-block;
+background:#075e54;
+color:white;
+text-decoration:none;
+padding:9px 14px;
+border-radius:7px;
+font-weight:bold;
+}
+
+.faq{
+margin-bottom:12px;
+}
+
+.faq summary{
+cursor:pointer;
+font-weight:bold;
+color:#075e54;
+padding:14px;
+background:#eef7f5;
+border-radius:8px;
+}
+
+.faq p{
+padding:14px;
+line-height:1.6;
+color:#555;
+}
+
+.aboutText{
+line-height:1.8;
+color:#555;
+font-size:15px;
+}
+
+.aboutText h3{
+color:#075e54;
+margin:18px 0 8px;
+}
+
+.studentGrid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.studentCard{
+background:white;
+padding:20px;
+border-radius:14px;
+box-shadow:0 3px 12px #ddd;
+}
+
+.studentCard h3{
+color:#075e54;
+margin-bottom:12px;
+}
+
+.studentInfo{
+line-height:1.8;
+color:#555;
+}
+
+.weeklyButtons{
+text-align:center;
+margin-bottom:20px;
+}
+
+.scheduleTable{
+display:none;
+}
+
+.scheduleTable.active{
+display:table;
+}
+
+footer{
+margin-top:30px;
+background:#075e54;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+@media(max-width:700px){
+
+header h1{
+font-size:20px;
+}
+
+nav a{
+font-size:12px;
+padding:8px;
+}
+
+th,td{
+font-size:12px;
+padding:8px 5px;
+}
+
+.btn{
+display:block;
+width:100%;
+margin:4px 0;
+}
+
+.courseGrid{
+grid-template-columns:1fr;
+}
+
+.studentGrid{
+grid-template-columns:1fr;
+}
+
+.courseCard img{
+height:180px;
+}
+
+.social a{
+font-size:12px;
+padding:8px;
+}
+
+}
+</style></head><body><header>
+<h1>Haroon Ibn Rasheed Online Quran Academy</h1>
+<p>Teacher Panel — Haroon Ibn Rasheed</p>
+</header><nav><a onclick="showPage('home')" id="navHome" class="active">
+Home
+</a><a onclick="showPage('weekly')" id="navWeekly">
+Weekly Classes
+</a><a onclick="showPage('courses')" id="navCourses">
+Courses
+</a><a onclick="showPage('students')" id="navStudents">
+Students
+</a><a onclick="showPage('faqs')" id="navFaqs">
+FAQs
+</a><a onclick="showPage('about')" id="navAbout">
+About
+</a></nav><!-- ================= HOME ================= --><section id="home" class="page active"><div class="container"><div class="title">
+<h2>Today's Classes</h2>
+<p id="date"></p>
+</div><div class="card"><table><thead>
+<tr>
+<th>Name</th>
+<th>Class Time</th>
+<th>Action</th>
+</tr>
+</thead><tbody id="todayClasses"></tbody></table></div><div class="social"><h3>Follow Haroon Ibn Rasheed Online Quran Academy</h3><a href="https://wa.me/923478140162" target="_blank">
+<svg viewBox="0 0 24 24">
+<path d="M20.5 3.5A11.8 11.8 0 0012.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.6 5.9L.1 24l6.4-1.7a12 12 0 005.6 1.4h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.1-3.6-8.3zM12.1 21.7c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 01-1.5-5.1C2.1 6.5 6.6 2 12.1 2c2.7 0 5.1 1 7 2.9s2.9 4.3 2.9 7c0 5.5-4.4 9.8-9.9 9.8z"/>
+</svg>
+WhatsApp
+</a><a href="https://www.tiktok.com/@haroonibnrasheed" target="_blank">
+<svg viewBox="0 0 24 24">
+<path d="M19.3 5.3c-1.2-.7-2.1-1.9-2.4-3.3h-3.4v13.7c0 1.5-1.2 2.7-2.7 2.7s-2.7-1.2-2.7-2.7 1.2-2.7 2.7-2.7c.3 0 .7.1 1 .2V9.7c-.3 0-.7-.1-1-.1-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6V8.9c1.2.9 2.7 1.5 4.3 1.5V7c-.6 0-1.2-.2-1.8-.5z"/>
+</svg>
+TikTok
+</a><a href="https://www.instagram.com/haroon.rasheed.officiall" target="_blank">
+<svg viewBox="0 0 24 24">
+<path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5A4.5 4.5 0 1112 16a4.5 4.5 0 010-9zm0 2A2.5 2.5 0 1014.5 12 2.5 2.5 0 0012 9.5zM17.8 6.2a1 1 0 110 2 1 1 0 010-2z"/>
+</svg>
+Instagram
+</a><a href="https://www.facebook.com/profile.php?id=61554907743273" target="_blank">
+<svg viewBox="0 0 24 24">
+<path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.5 1.6-1.5h1.7V4.9c-.3 0-1.4-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.3v3h2.8v8h3.4z"/>
+</svg>
+Facebook
+</a><a href="https://www.youtube.com/@Haroon-Ibn-Rasheed" target="_blank">
+<svg viewBox="0 0 24 24">
+<path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.5v-7l6.2 3.5-6.2 3.5z"/>
+</svg>
+YouTube
+</a></div></div></section><!-- ================= WEEKLY CLASSES ================= --><section id="weekly" class="page"><div class="container"><div class="title">
+<h2>Weekly Classes</h2>
+<p>12-hour timetable with 30-minute slots</p>
+</div><div class="weeklyButtons"><button class="shiftBtn active" onclick="showShift('am',this)">
+AM Classes
+</button><button class="shiftBtn" onclick="showShift('pm',this)">
+PM Classes
+</button></div><div class="card"><!-- 12:00 AM TO 12:00 PM --><table id="amTable" class="scheduleTable active"><thead>
+<tr>
+<th>Time</th>
+<th>Student</th>
+<th>Course</th>
+</tr>
+</thead><tbody id="amBody"></tbody></table><!-- 12:00 PM TO 12:00 AM --><table id="pmTable" class="scheduleTable"><thead>
+<tr>
+<th>Time</th>
+<th>Student</th>
+<th>Course</th>
+</tr>
+</thead><tbody id="pmBody"></tbody></table></div><div class="social"><h3>Follow Haroon Ibn Rasheed Online Quran Academy</h3><a href="https://wa.me/923478140162" target="_blank">💬 WhatsApp</a>
+
+<a href="https://www.tiktok.com/@haroonibnrasheed" target="_blank">♪ TikTok</a>
+
+<a href="https://www.instagram.com/haroon.rasheed.officiall" target="_blank">◎ Instagram</a>
+
+<a href="https://www.facebook.com/profile.php?id=61554907743273" target="_blank">f Facebook</a>
+
+<a href="https://www.youtube.com/@Haroon-Ibn-Rasheed" target="_blank">▶ YouTube</a>
+
+</div></div></section><!-- ================= COURSES ================= --><section id="courses" class="page"><div class="container"><div class="title"><h2>Our Courses</h2><p>Learn Quran and Islamic Studies online</p></div><div class="courseGrid"><div class="courseCard">
+<img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=900&q=80">
+<div class="courseContent">
+<h3>Reading of Quran</h3>
+<p>Learn Quran reading correctly with proper pronunciation.</p>
+<a class="courseLink" href="https://drive.google.com/drive/folders/1Fg46DCutB-ybHsU4ST-7O5Zye3bRZ43U" target="_blank">Open Course</a>
+</div>
+</div><div class="courseCard">
+<img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=900&q=80">
+<div class="courseContent">
+<h3>Quran Translation</h3>
+<p>Understand the meaning and message of the Holy Quran.</p>
+<a class="courseLink" href="https://quran.com/" target="_blank">Open Course</a>
+</div>
+</div><div class="courseCard">
+<img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=900&q=80">
+<div class="courseContent">
+<h3>Quran Tafseer</h3>
+<p>Learn the explanation and deeper meanings of Quranic verses.</p>
+<a class="courseLink" href="#" onclick="alert('Tafseer course material will be added soon.');return false;">Open Course</a>
+</div>
+</div><div class="courseCard">
+<img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?auto=format&fit=crop&w=900&q=80">
+<div class="courseContent">
+<h3>Quran Memorization</h3>
+<p>Memorize the Holy Quran with proper guidance and revision.</p>
+<a class="courseLink" href="https://drive.google.com/drive/folders/1Fg46DCutB-ybHsU4ST-7O5Zye3bRZ43U" target="_blank">Open Course</a>
+</div>
+</div><div class="courseCard">
+<img src="https://images.unsplash.com/photo-1603868981969-7b0e2e9c6b0d?auto=format&fit=crop&w=900&q=80">
+<div class="courseContent">
+<h3>Norani & Madni Qaida</h3>
+<p>Learn the basic rules and pronunciation of Quran reading.</p>
+<a class="courseLink" href="https://drive.google.com/drive/folders/1Q2F3Nwy9BLt6Luj8nNEy9caXQxnFpqLU" target="_blank">Open Course</a>
+</div>
+</div><div class="courseCard">
+<img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=80">
+<div class="courseContent">
+<h3>Tajweed-o-Qirat Course</h3>
+<p>Improve Quran recitation with Tajweed and Qirat rules.</p>
+<a class="courseLink" href="https://drive.google.com/drive/folders/1LGD8WuSRryACGP0D-4CVbB0GWPIpyAOv" target="_blank">Open Course</a>
+</div>
+</div><div class="courseCard">
+<img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=900&q=80">
+<div class="courseContent">
+<h3>40 Hadiths Course</h3>
+<p>Learn selected Ahadith and their practical lessons.</p>
+<a class="courseLink" href="#" onclick="alert('40 Hadiths course material will be added soon.');return false;">Open Course</a>
+</div>
+</div><div class="courseCard">
+<img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?auto=format&fit=crop&w=900&q=80">
+<div class="courseContent">
+<h3>Prayers & Kalmas</h3>
+<p>Learn essential prayers, Kalmas and basic Islamic practices.</p>
+<a class="courseLink" href="#" onclick="alert('Prayers & Kalmas material will be added soon.');return false;">Open Course</a>
+</div>
+</div><div class="courseCard">
+<img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80">
+<div class="courseContent">
+<h3>Tilawat Video & Voice Editing</h3>
+<p>Learn video and voice editing techniques for Quran Tilawat.</p>
+<a class="courseLink" href="#" onclick="alert('Tilawat editing course material will be added soon.');return false;">Open Course</a>
+</div>
+</div><div class="courseCard">
+<img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=80">
+<div class="courseContent">
+<h3>Islamic Studies for Kids</h3>
+<p>Basic Islamic education designed especially for children.</p>
+<a class="courseLink" href="#" onclick="alert('Islamic Studies for Kids material will be added soon.');return false;">Open Course</a>
+</div>
+</div></div><div class="social"><h3>Follow Haroon Ibn Rasheed Online Quran Academy</h3><a href="https://wa.me/923478140162" target="_blank">💬 WhatsApp</a>
+
+<a href="https://www.tiktok.com/@haroonibnrasheed" target="_blank">♪ TikTok</a>
+
+<a href="https://www.instagram.com/haroon.rasheed.officiall" target="_blank">◎ Instagram</a>
+
+<a href="https://www.facebook.com/profile.php?id=61554907743273" target="_blank">f Facebook</a>
+
+<a href="https://www.youtube.com/@Haroon-Ibn-Rasheed" target="_blank">▶ YouTube</a>
+
+</div></div></section><!-- ================= STUDENTS ================= --><section id="students" class="page"><div class="container"><div class="title"><h2>Students</h2><p>Teacher: Haroon Ibn Rasheed</p></div><div class="studentGrid"><div class="studentCard"><h3>Binish</h3><div class="studentInfo"><strong>Gender:</strong> Female<br>
+<strong>Course:</strong> Quran<br>
+<strong>Class Time:</strong> 7:00 PM – 7:30 PM<br>
+<strong>Days:</strong> Monday – Saturday
+
+</div></div><div class="studentCard"><h3>Uzma</h3><div class="studentInfo"><strong>Gender:</strong> Female<br>
+<strong>Course:</strong> Quran<br>
+<strong>Class Time:</strong> 8:00 AM – 8:30 AM<br>
+<strong>Days:</strong> Monday – Saturday
+
+</div></div></div><div class="social"><h3>Follow Haroon Ibn Rasheed Online Quran Academy</h3><a href="https://wa.me/923478140162" target="_blank">💬 WhatsApp</a>
+
+<a href="https://www.tiktok.com/@haroonibnrasheed" target="_blank">♪ TikTok</a>
+
+<a href="https://www.instagram.com/haroon.rasheed.officiall" target="_blank">◎ Instagram</a>
+
+<a href="https://www.facebook.com/profile.php?id=61554907743273" target="_blank">f Facebook</a>
+
+<a href="https://www.youtube.com/@Haroon-Ibn-Rasheed" target="_blank">▶ YouTube</a>
+
+</div></div></section><!-- ================= FAQS ================= --><section id="faqs" class="page"><div class="container"><div class="title"><h2>Frequently Asked Questions</h2><p>Common questions about our academy</p></div><div class="card"><details class="faq">
+<summary>What does the academy teach?</summary>
+<p>
+We provide Quran Reading, Quran Translation, Quran Tafseer,
+Quran Memorization, Norani & Madni Qaida, Tajweed-o-Qirat,
+40 Hadiths, Prayers & Kalmas, Tilawat Video & Voice Editing,
+and Islamic Studies for Kids.
+</p>
+</details><details class="faq">
+<summary>Are classes online?</summary>
+<p>
+Yes. Classes are conducted online using Google Meet and Zoom.
+</p>
+</details><details class="faq">
+<summary>How long is one class?</summary>
+<p>
+Each regular class is 30 minutes.
+</p>
+</details><details class="faq">
+<summary>Can students choose a male or female teacher?</summary>
+<p>
+Yes. Male and female teachers are available according to the student's requirements.
+</p>
+</details><details class="faq">
+<summary>Can a teacher be changed?</summary>
+<p>
+Yes. If a student is not comfortable with the assigned teacher,
+the teacher can be changed.
+</p>
+</details><details class="faq">
+<summary>Is a trial class available?</summary>
+<p>
+Yes. A 3-day FREE trial is available for new students.
+</p>
+</details><details class="faq">
+<summary>How can I contact the academy?</summary>
+<p>
+You can contact Haroon Ibn Rasheed Online Quran Academy through WhatsApp
+using the WhatsApp button available on this website.
+</p>
+</details></div><div class="social"><h3>Follow Haroon Ibn Rasheed Online Quran Academy</h3><a href="https://wa.me/923478140162" target="_blank">💬 WhatsApp</a>
+
+<a href="https://www.tiktok.com/@haroonibnrasheed" target="_blank">♪ TikTok</a>
+
+<a href="https://www.instagram.com/haroon.rasheed.officiall" target="_blank">◎ Instagram</a>
+
+<a href="https://www.facebook.com/profile.php?id=61554907743273" target="_blank">f Facebook</a>
+
+<a href="https://www.youtube.com/@Haroon-Ibn-Rasheed" target="_blank">▶ YouTube</a>
+
+</div></div></section><!-- ================= ABOUT ================= --><section id="about" class="page"><div class="container"><div class="title"><h2>About Us</h2><p>Haroon Ibn Rasheed Online Quran Academy</p></div><div class="card aboutText"><h3>About Haroon Ibn Rasheed Online Quran Academy</h3><p>
+Haroon Ibn Rasheed Online Quran Academy is an online Quran learning
+academy dedicated to helping students learn the Holy Quran and
+Islamic studies from the comfort of their homes.
+</p><h3>Our Mission</h3><p>
+Our mission is to make Quran and Islamic education accessible to
+children and adults through convenient online classes with qualified
+teachers and a comfortable learning environment.
+</p><h3>Our Courses</h3><p>
+We offer Quran Reading, Quran Translation, Quran Tafseer,
+Quran Memorization, Norani & Madni Qaida, Tajweed-o-Qirat,
+40 Hadiths, Prayers & Kalmas, Tilawat Video & Voice Editing,
+and Islamic Studies for Kids.
+</p><h3>Online Classes</h3><p>
+Classes are conducted online through Google Meet and Zoom.
+Regular classes are 30 minutes long and students can learn according
+to their scheduled class time.
+</p><h3>Teacher</h3><p>
+Teacher: <strong>Haroon Ibn Rasheed</strong>
+</p></div><div class="social"><h3>Follow Haroon Ibn Rasheed Online Quran Academy</h3><a href="https://wa.me/923478140162" target="_blank">💬 WhatsApp</a>
+
+<a href="https://www.tiktok.com/@haroonibnrasheed" target="_blank">♪ TikTok</a>
+
+<a href="https://www.instagram.com/haroon.rasheed.officiall" target="_blank">◎ Instagram</a>
+
+<a href="https://www.facebook.com/profile.php?id=61554907743273" target="_blank">f Facebook</a>
+
+<a href="https://www.youtube.com/@Haroon-Ibn-Rasheed" target="_blank">▶ YouTube</a>
+
+</div></div></section><footer>
+© 2026 Haroon Ibn Rasheed Online Quran Academy
+</footer><script>
+
+/* ================= STUDENTS ================= */
+
+const students={
+
+binish:{
+name:"Binish",
+gender:"Female",
+course:"Quran",
+start:"19:00",
+end:"19:30",
+days:[1,2,3,4,5,6],
+lesson:"https://drive.google.com/drive/folders/1Fg46DCutB-ybHsU4ST-7O5Zye3bRZ43U"
+},
+
+uzma:{
+name:"Uzma",
+gender:"Female",
+course:"Quran",
+start:"08:00",
+end:"08:30",
+days:[1,2,3,4,5,6],
+lesson:"https://drive.google.com/drive/folders/1Fg46DCutB-ybHsU4ST-7O5Zye3bRZ43U"
+}
+
+};
+
+
+const classroomLink=
+"https://haroonibnrasheedonlinequranacadmey.github.io/haroon-quran-classroom/";
+
+
+/* ================= TIME ================= */
+
+function minutes(t){
+
+let p=t.split(":");
+
+return Number(p[0])*60+Number(p[1]);
+
+}
+
+
+function currentMinutes(){
+
+let d=new Date();
+
+return d.getHours()*60+d.getMinutes();
+
+}
+
+
+function timeText(t){
+
+let p=t.split(":");
+
+let h=Number(p[0]);
+
+let m=p[1];
+
+let ap=h>=12?"PM":"AM";
+
+if(h===0)h=12;
+
+if(h>12)h-=12;
+
+return h+":"+m+" "+ap;
+
+}
+
+
+function key(id){
+
+let d=new Date();
+
+/*
+New storage version.
+This automatically ignores the old "Absent" state
+from the previous version and starts today's classes fresh.
+*/
+
+return "class_v2_"+id+"_"+d.getFullYear()+"_"+(d.getMonth()+1)+"_"+d.getDate();
+
+}
+
+
+function state(id){
+
+return localStorage.getItem(key(id));
+
+}
+
+
+function save(id,s){
+
+localStorage.setItem(key(id),s);
+
+}
+
+
+function minutesToTime(x){
+
+x=(x+1440)%1440;
+
+return String(Math.floor(x/60)).padStart(2,"0")+":"+String(x%60).padStart(2,"0");
+
+}
+
+
+/* ================= HOME ================= */
+
+function render(){
+
+let day=new Date().getDay();
+
+let now=currentMinutes();
+
+
+document.getElementById("date").textContent=
+
+new Date().toLocaleDateString(
+
+"en-US",
+
+{
+weekday:"long",
+year:"numeric",
+month:"long",
+day:"numeric"
+}
+
+);
+
+
+let shiftStudents=
+
+Object.entries(students).filter(([id,s])=>{
+
+if(!s.days.includes(day))return false;
+
+let start=minutes(s.start);
+
+if(now<720)return start<720;
+
+return start>=720;
+
+});
+
+
+let box=document.getElementById("todayClasses");
+
+box.innerHTML="";
+
+
+if(!shiftStudents.length){
+
+box.innerHTML=
+'<tr><td colspan="3">No class scheduled for the current time shift.</td></tr>';
+
+return;
+
+}
+
+
+shiftStudents.sort(
+(a,b)=>minutes(a[1].start)-minutes(b[1].start)
+);
+
+
+shiftStudents.forEach(([id,s])=>{
+
+let st=state(id);
+
+let row=document.createElement("tr");
+
+
+if(st==="absent")row.className="absentRow";
+
+if(st==="completed")row.className="completedRow";
+
+if(st==="active")row.className="activeRow";
+
+
+let action="";
+
+
+if(st==="absent"){
+
+action=
+'<span class="status absentStatus">Absent</span>';
+
+}
+
+
+else if(st==="completed"){
+
+action=
+'<span class="status completedStatus">Completed</span>';
+
+}
+
+
+else if(st==="active"){
+
+action=`
+
+<a class="btn join"
+href="${classroomLink}"
+target="_blank">
+Join Class
+</a>
+
+<a class="btn lesson"
+href="${s.lesson}"
+target="_blank">
+Open Lesson
+</a>
+
+<button class="btn absentBtn"
+onclick="absent('${id}')">
+Mark Absent
+</button>
+
+<button class="btn endBtn"
+onclick="endClass('${id}')">
+End Class
+</button>
+
+`;
+
+}
+
+
+else{
+
+action=`
+
+<button class="btn activeBtn"
+onclick="activate('${id}')">
+Active Class
+</button>
+
+<button class="btn absentBtn"
+onclick="absent('${id}')">
+Mark Absent
+</button>
+
+`;
+
+}
+
+
+row.innerHTML=`
+
+<td>
+
+<div class="name">${s.name}</div>
+
+</td>
+
+
+<td>
+
+<strong>${timeText(s.start)}</strong>
+
+<div class="small">
+to ${timeText(s.end)}
+</div>
+
+</td>
+
+
+<td>
+${action}
+</td>
+
+`;
+
+
+box.appendChild(row);
+
+});
+
+}
+
+
+/* ================= ACTIVATE ================= */
+
+function activate(id){
+
+let s=students[id];
+
+let now=currentMinutes();
+
+let start=minutes(s.start);
+
+
+if(now<start-5){
+
+alert(
+"Active Class will be available 5 minutes before class time: "
++timeText(minutesToTime(start-5))
+);
+
+return;
+
+}
+
+
+if(now>=start){
+
+alert(
+"The class start time has already passed. Please activate the class before the scheduled start time."
+);
+
+return;
+
+}
+
+
+save(id,"active");
+
+render();
+
+}
+
+
+/* ================= ABSENT ================= */
+
+function absent(id){
+
+if(
+confirm(
+"Mark "+students[id].name+" as absent?"
+)
+){
+
+save(id,"absent");
+
+render();
+
+}
+
+}
+
+
+/* ================= END CLASS ================= */
+
+function endClass(id){
+
+let s=students[id];
+
+
+if(currentMinutes()<minutes(s.end)){
+
+alert(
+"You can end this class after "
++timeText(s.end)+"."
+);
+
+return;
+
+}
+
+
+save(id,"completed");
+
+render();
+
+}
+
+
+/* ================= PAGE NAVIGATION ================= */
+
+function showPage(page){
+
+document.querySelectorAll(".page").forEach(
+p=>p.classList.remove("active")
+);
+
+
+document.getElementById(page).classList.add("active");
+
+
+document.querySelectorAll("nav a").forEach(
+a=>a.classList.remove("active")
+);
+
+
+document.getElementById(
+"nav"+page.charAt(0).toUpperCase()+page.slice(1)
+).classList.add("active");
+
+
+window.scrollTo(0,0);
+
+}
+
+
+/* ================= WEEKLY 12-HOUR TABLES ================= */
+
+function buildWeekly(){
+
+let amBody=document.getElementById("amBody");
+
+let pmBody=document.getElementById("pmBody");
+
+
+amBody.innerHTML="";
+
+pmBody.innerHTML="";
+
+
+/*
+AM TABLE
+12:00 AM to 12:00 PM
+Every 30 minutes
+*/
+
+for(let m=0;m<720;m+=30){
+
+let h=Math.floor(m/60);
+
+let min=m%60;
+
+let time=
+String(h).padStart(2,"0")+":"+
+String(min).padStart(2,"0");
+
+
+let found=
+Object.values(students).find(s=>
+minutes(s.start)===m
+);
+
+
+let tr=document.createElement("tr");
+
+
+tr.innerHTML=`
+
+<td>${timeText(time)}</td>
+
+<td>${found?found.name:""}</td>
+
+<td>${found?found.course:""}</td>
+
+`;
+
+
+amBody.appendChild(tr);
+
+}
+
+
+/*
+PM TABLE
+12:00 PM to 12:00 AM
+Every 30 minutes
+*/
+
+for(let m=720;m<1440;m+=30){
+
+let h=Math.floor(m/60);
+
+let min=m%60;
+
+let time=
+String(h).padStart(2,"0")+":"+
+String(min).padStart(2,"0");
+
+
+let found=
+Object.values(students).find(s=>
+minutes(s.start)===m
+);
+
+
+let tr=document.createElement("tr");
+
+
+tr.innerHTML=`
+
+<td>${timeText(time)}</td>
+
+<td>${found?found.name:""}</td>
+
+<td>${found?found.course:""}</td>
+
+`;
+
+
+pmBody.appendChild(tr);
+
+}
+
+}
+
+
+/* ================= AM / PM BUTTON ================= */
+
+function showShift(shift,button){
+
+document.querySelectorAll(".scheduleTable").forEach(
+t=>t.classList.remove("active")
+);
+
+
+document.querySelectorAll(".shiftBtn").forEach(
+b=>b.classList.remove("active")
+);
+
+
+document.getElementById(
+shift+"Table"
+).classList.add("active");
+
+
+button.classList.add("active");
+
+}
+
+
+/* ================= START ================= */
+
+render();
+
+buildWeekly();
+
+
+setInterval(function(){
+
+render();
+
+},10000);
+
+</script></body>
+</html>
